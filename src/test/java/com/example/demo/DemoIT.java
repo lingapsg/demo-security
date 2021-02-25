@@ -17,10 +17,18 @@ public class DemoIT {
 
 
     @Test
-    void testUnrestrictedEndpoint() {
+    void testUnrestrictedEndpointWithAuthorizationHeader() {
         webTestClient.get()
                 .uri("/api/unrestricted")
                 .header(HttpHeaders.AUTHORIZATION, "Bearer token") // fails when passing token
+                .exchange()
+                .expectStatus().isOk();
+    }
+
+    @Test
+    void testUnrestrictedEndpoint() {
+        webTestClient.get()
+                .uri("/api/unrestricted")
                 .exchange()
                 .expectStatus().isOk();
     }
