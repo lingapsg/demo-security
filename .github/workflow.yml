@@ -1,0 +1,10 @@
+name: FirstWorkFlow
+on: workflow_dispatch
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Compile
+        run: echo "compiled"
+      - name: Run tests
+        run: echo "tests passed"
