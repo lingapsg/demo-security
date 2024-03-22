@@ -7,4 +7,6 @@ jobs:
       - name: Compile
         run: echo "Compile"
       - name: Run tests
-        run: echo "tests successful"
+        run: |
+            echo "tests started"
+            echo "tests successful"
